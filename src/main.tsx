@@ -5,6 +5,8 @@ import {store} from "@/utils/store";
 import {Provider} from 'react-redux';
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "firebase/firestore";
+import {CssBaseline} from "@mui/material";
+import {getAuth} from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDLNN60_LPQkgPo9PhGD_vbWJm6a65G5aY",
@@ -17,11 +19,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-
+export const auth = getAuth(app);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
+      <CssBaseline/>
       <App/>
     </Provider>
   </React.StrictMode>,

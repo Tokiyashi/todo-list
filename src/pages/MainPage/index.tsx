@@ -1,8 +1,8 @@
-import Page from "../common/styles/Page.ts";
 import {useTranslation} from "react-i18next";
 import {Typography} from "@mui/material";
-import Lists from "./Lists/index.tsx";
 import Header from "@/Components/Header/index.tsx";
+import Page from "@/common/styles/Page";
+import TodoList from "@/Components/TodoList";
 
 const MainPage = () => {
   const {t} = useTranslation()
@@ -12,7 +12,7 @@ const MainPage = () => {
       <Typography fontWeight='bold' fontSize='2rem'>
         {t('Todo List')}
       </Typography>
-      <Lists/>
+      <TodoList title='list'/>
     </Page>
   );
 };

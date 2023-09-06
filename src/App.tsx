@@ -1,18 +1,13 @@
 import MainPage from "./MainPage";
-import {useAppDispatch} from "@/utils/hooks/store.ts";
-import {useEffect} from "react";
-import {fetchAllTodos} from "@/utils/store/slices/todosSlices.ts";
+import {useInitStore} from "@/utils/hooks/initTodos.ts";
+import AuthPage from "@/pages/AuthPage";
+import {useAppSelector} from "@/utils/hooks/store.ts";
 
 function App() {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(fetchAllTodos());
-  }, [dispatch]);
-
-  return (
-    <MainPage/>
-  )
+  useInitStore()
+  const user = useAppSelector(state => state.user.user);
+  return user ?
+    <MainPage/> : <AuthPage/>
 }
 
 export default App
