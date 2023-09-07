@@ -11,12 +11,10 @@ type Props = {
 const TodoItem = ({item}: Props) => {
   const {text, completed} = item
   const [isCompleted, setIsCompleted] = useState(completed)
-  console.log(item.id)
 
   async function handleCheck(e: ChangeEvent<HTMLInputElement>) {
     const {checked} = e.target
     setIsCompleted(checked);
-    console.log(item)
     await updateTodo({...item, completed: checked});
   }
 

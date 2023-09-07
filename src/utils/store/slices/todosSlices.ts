@@ -12,8 +12,9 @@ const initialState: TodosState = {
   todos: []
 }
 
-export const fetchAllTodos = createAsyncThunk("todos/fetchAllTodos", async (userId: string) => {
-  return await fetchTodos(userId);
+export const fetchAllTodos = createAsyncThunk("todos/fetchAllTodos", async (payload, thunkAPI) => {
+  const state = <RootState>thunkAPI.getState();
+  return await fetchTodos(String(state.user.user?.id));
 });
 
 export const addNewTodo = createAsyncThunk("todos/addNewTodo", async (payload: TodoCreate) => {
