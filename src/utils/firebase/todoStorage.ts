@@ -22,7 +22,7 @@ export const addTodo = async (value: TodoCreate): Promise<Todo> => {
   const newValue: Todo = {...value, completed: false}
   const docRef = await addDoc(collection(db, "todos"), newValue);
   const docSnapshot = await getDoc(docRef);
-  
+
   return {id: docSnapshot.id, ...docSnapshot.data()} as Todo;
 }
 

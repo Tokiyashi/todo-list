@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1694079314801" clover="3.2.0">
-  <project timestamp="1694079314801" name="All files">
-    <metrics statements="130" coveredstatements="46" conditionals="20" coveredconditionals="1" methods="42" coveredmethods="4" elements="192" coveredelements="51" complexity="0" loc="130" ncloc="130" packages="18" files="23" classes="23"/>
+<coverage generated="1694086673064" clover="3.2.0">
+  <project timestamp="1694086673064" name="All files">
+    <metrics statements="170" coveredstatements="48" conditionals="28" coveredconditionals="0" methods="53" coveredmethods="3" elements="251" coveredelements="51" complexity="0" loc="170" ncloc="170" packages="22" files="28" classes="28"/>
     <package name="src">
-      <metrics statements="7" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="9" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="App.tsx" path="D:\Coding\Front End Journey\todo-list\src\App.tsx">
-        <metrics statements="2" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
+        <metrics statements="4" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
       </file>
       <file name="main.tsx" path="D:\Coding\Front End Journey\todo-list\src\main.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -40,12 +42,15 @@
       </file>
     </package>
     <package name="src.Components.Header">
-      <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="index.tsx" path="D:\Coding\Front End Journey\todo-list\src\Components\Header\index.tsx">
-        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+        <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.Components.Header.styles">
@@ -64,8 +69,8 @@
         <line num="13" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.Components.TodoItem.styles">
@@ -76,13 +81,17 @@
       </file>
     </package>
     <package name="src.Components.TodoList">
-      <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="8" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
       <file name="index.tsx" path="D:\Coding\Front End Journey\todo-list\src\Components\TodoList\index.tsx">
-        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+        <metrics statements="8" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.Components.TodoList.styles">
@@ -90,6 +99,12 @@
       <file name="Container.ts" path="D:\Coding\Front End Journey\todo-list\src\Components\TodoList\styles\Container.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.common.enums">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="filters.ts" path="D:\Coding\Front End Journey\todo-list\src\common\enums\filters.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
     <package name="src.common.styles">
@@ -112,34 +127,36 @@
       </file>
     </package>
     <package name="src.pages.AuthPage.Form">
-      <metrics statements="25" coveredstatements="1" conditionals="8" coveredconditionals="0" methods="6" coveredmethods="0"/>
+      <metrics statements="27" coveredstatements="1" conditionals="8" coveredconditionals="0" methods="6" coveredmethods="0"/>
       <file name="index.tsx" path="D:\Coding\Front End Journey\todo-list\src\pages\AuthPage\Form\index.tsx">
-        <metrics statements="25" coveredstatements="1" conditionals="8" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <metrics statements="27" coveredstatements="1" conditionals="8" coveredconditionals="0" methods="6" coveredmethods="0"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="16" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="23" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="31" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="37" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
-        <line num="74" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.AuthPage.Form.styles">
@@ -149,41 +166,70 @@
         <line num="3" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="src.pages.LoadingPage">
+      <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.tsx" path="D:\Coding\Front End Journey\todo-list\src\pages\LoadingPage\index.tsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+    </package>
     <package name="src.pages.MainPage">
-      <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="index.tsx" path="D:\Coding\Front End Journey\todo-list\src\pages\MainPage\index.tsx">
-        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="11" count="1" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.MainPage.Filters">
+      <metrics statements="5" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="index.tsx" path="D:\Coding\Front End Journey\todo-list\src\pages\MainPage\Filters\index.tsx">
+        <metrics statements="5" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+    </package>
+    <package name="src.pages.MainPage.Filters.styles">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Container.ts" path="D:\Coding\Front End Journey\todo-list\src\pages\MainPage\Filters\styles\Container.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.utils.firebase">
-      <metrics statements="36" coveredstatements="11" conditionals="4" coveredconditionals="1" methods="8" coveredmethods="2"/>
+      <metrics statements="41" coveredstatements="7" conditionals="6" coveredconditionals="0" methods="9" coveredmethods="1"/>
       <file name="todoStorage.ts" path="D:\Coding\Front End Journey\todo-list\src\utils\firebase\todoStorage.ts">
-        <metrics statements="17" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="2"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+        <metrics statements="18" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
         <line num="29" count="2" type="stmt"/>
-        <line num="30" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
       </file>
       <file name="userStorage.ts" path="D:\Coding\Front End Journey\todo-list\src\utils\firebase\userStorage.ts">
-        <metrics statements="19" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="6" count="1" type="stmt"/>
+        <metrics statements="23" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
@@ -194,30 +240,50 @@
         <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.utils.hooks">
-      <metrics statements="7" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="19" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="0"/>
       <file name="initTodos.ts" path="D:\Coding\Front End Journey\todo-list\src\utils\hooks\initTodos.ts">
-        <metrics statements="5" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="9" count="0" type="stmt"/>
       </file>
       <file name="store.ts" path="D:\Coding\Front End Journey\todo-list\src\utils\hooks\store.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="user.ts" path="D:\Coding\Front End Journey\todo-list\src\utils\hooks\user.ts">
+        <metrics statements="13" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.utils.store">
@@ -229,22 +295,23 @@
       </file>
     </package>
     <package name="src.utils.store.slices">
-      <metrics statements="18" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="1"/>
+      <metrics statements="19" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="1"/>
       <file name="todosSlices.ts" path="D:\Coding\Front End Journey\todo-list\src\utils\store\slices\todosSlices.ts">
-        <metrics statements="13" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="1"/>
+        <metrics statements="14" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="1"/>
         <line num="11" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
       </file>
       <file name="userSlices.ts" path="D:\Coding\Front End Journey\todo-list\src\utils\store\slices\userSlices.ts">
         <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>

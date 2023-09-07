@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4% </span>
+                <span class="strong">3.7% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/25</span>
+                <span class='fraction'>1/27</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4% </span>
+                <span class="strong">3.7% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/25</span>
+                <span class='fraction'>1/27</span>
             </div>
         
             
@@ -147,7 +147,10 @@
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,6 +167,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -176,17 +193,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -245,6 +251,20 @@ const Form = <span class="fstat-no" title="function not covered" >()</span> =&gt
   const {t} = <span class="cstat-no" title="statement not covered" >useTranslation()</span>
   const [errorMessage, setErrorMessage] = <span class="cstat-no" title="statement not covered" >useState('')</span>
 &nbsp;
+  async function <span class="fstat-no" title="function not covered" >handleLogin(</span>) {
+    const result = <span class="cstat-no" title="statement not covered" >await fetchUser({name, password});</span>
+<span class="cstat-no" title="statement not covered" >    setName('');</span>
+<span class="cstat-no" title="statement not covered" >    setPassword('');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (!result) {</span>
+<span class="cstat-no" title="statement not covered" >      setErrorMessage('Incorrect login or password')</span>
+<span class="cstat-no" title="statement not covered" >      return</span>
+    }
+<span class="cstat-no" title="statement not covered" >    localStorage.setItem('userId', result.id)</span>
+<span class="cstat-no" title="statement not covered" >    store.dispatch(setUser(result))</span>
+&nbsp;
+  }
+&nbsp;
   async function <span class="fstat-no" title="function not covered" >handleSignIn(</span>) {
 <span class="cstat-no" title="statement not covered" >    if (!name || !password) {</span>
 <span class="cstat-no" title="statement not covered" >      return</span>
@@ -260,20 +280,9 @@ const Form = <span class="fstat-no" title="function not covered" >()</span> =&gt
     }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    await addUser({name, password})</span>
+<span class="cstat-no" title="statement not covered" >    await handleLogin();</span>
   }
 &nbsp;
-  async function <span class="fstat-no" title="function not covered" >HandleLogin(</span>) {
-    const result = <span class="cstat-no" title="statement not covered" >await fetchUser({name, password});</span>
-<span class="cstat-no" title="statement not covered" >    setName('');</span>
-<span class="cstat-no" title="statement not covered" >    setPassword('');</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!result) {</span>
-<span class="cstat-no" title="statement not covered" >      setErrorMessage('Incorrect login or password')</span>
-<span class="cstat-no" title="statement not covered" >      return</span>
-    }
-<span class="cstat-no" title="statement not covered" >    store.dispatch(setUser(result))</span>
-&nbsp;
-  }
 &nbsp;
   function <span class="fstat-no" title="function not covered" >handleNameChange(</span>e: ChangeEvent&lt;HTMLInputElement&gt;) {
 <span class="cstat-no" title="statement not covered" >    setName(e.target.value);</span>
@@ -299,7 +308,7 @@ const Form = <span class="fstat-no" title="function not covered" >()</span> =&gt
         value={password}
         label={t('Password')}
       /&gt;
-      &lt;Button variant='contained' onClick={HandleLogin}&gt;{t('Log in')}&lt;/Button&gt;
+      &lt;Button variant='contained' onClick={handleLogin}&gt;{t('Log in')}&lt;/Button&gt;
       &lt;Button variant='outlined' onClick={handleSignIn}&gt;{t('Sign in')}&lt;/Button&gt;
       &lt;Snackbar
         open={!!errorMessage}
@@ -322,7 +331,7 @@ export default Form;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-07T09:35:14.523Z
+                at 2023-09-07T11:37:52.927Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
