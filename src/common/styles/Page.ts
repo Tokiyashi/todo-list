@@ -8,5 +8,6 @@ const Page= styled(Box)`
   height: 100dvh;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
 `;
 export default Page;

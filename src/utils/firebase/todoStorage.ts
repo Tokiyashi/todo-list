@@ -1,25 +1,28 @@
-import {addDoc, collection, doc, getDocs, updateDoc} from "firebase/firestore";
+import {addDoc, collection, doc, getDocs, query, updateDoc, where} from "firebase/firestore";
 import {db} from "@/main.tsx";
-import {Todo} from "@/common/types/Todo.ts";
+import {Todo, TodoCreate} from "@/common/types/Todo.ts";
 import {nanoid} from "@reduxjs/toolkit";
 
-export const fetchTodos = async (): Promise<Todo[]> => {
-  let result: Todo[] = []
+export const fetchTodos = async (userId: string): Promise<Todo[]> => {
+  let result: Todo[] = [];
 
-  await getDocs(collection(db, "todos"))
-    .then((querySnapshot) => {
-      const newData = querySnapshot.docs
-        .map((doc) => ({...doc.data(), id: doc.id} as Todo));
-      result = (newData);
-    })
-  return result
-}
+  const todosRef = collection(db, "todos");
+  const matchingItems = query(todosRef, where("userId", "==", userId));
 
-export const addTodo = async (value: Omit<Todo, 'id'>): Promise<Todo> => {
-  const newValue = {...value, id: nanoid()}
+  await getDocs(matchingItems).then((querySnapshot) => {
+    const newData = querySnapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }) as Todo);
+    result = newData;
+  });
+  return result;
+};
 
+export const addTodo = async (value: TodoCreate): Promise<Todo> => {
+  const newValue: Todo = {...value, id: nanoid(), completed: false}
   await addDoc(collection(db, "todos"), newValue);
-  console.log(newValue)
+
   return newValue;
 }
 

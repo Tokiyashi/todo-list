@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import {RootState} from "@/utils/store";
-import {Todo} from "@/common/types/Todo.ts";
+import {Todo, TodoCreate} from "@/common/types/Todo.ts";
 import {addTodo, fetchTodos} from "@/utils/firebase/todoStorage.ts";
 
 type TodosState =
@@ -12,11 +12,11 @@ const initialState: TodosState = {
   todos: []
 }
 
-export const fetchAllTodos = createAsyncThunk("todos/fetchAllTodos", async () => {
-  return await fetchTodos();
+export const fetchAllTodos = createAsyncThunk("todos/fetchAllTodos", async (userId: string) => {
+  return await fetchTodos(userId);
 });
 
-export const addNewTodo = createAsyncThunk("todos/addNewTodo", async (payload: Omit<Todo, 'id'>) => {
+export const addNewTodo = createAsyncThunk("todos/addNewTodo", async (payload: TodoCreate) => {
   return await addTodo(payload);
 });
 
