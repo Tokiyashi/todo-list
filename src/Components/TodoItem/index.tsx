@@ -2,6 +2,7 @@ import Container from "./styles/Container.ts";
 import {Checkbox, Typography} from "@mui/material";
 import {ChangeEvent, useState} from "react";
 import {Todo} from "@/common/types/Todo.ts";
+import {updateTodo} from "@/utils/firebase/todoStorage.ts";
 
 type Props = {
   item: Todo;
@@ -10,9 +11,13 @@ type Props = {
 const TodoItem = ({item}: Props) => {
   const {text, completed} = item
   const [isCompleted, setIsCompleted] = useState(completed)
+  console.log(item.id)
 
-  function handleCheck(e: ChangeEvent<HTMLInputElement>) {
-    setIsCompleted(e.target.checked)
+  async function handleCheck(e: ChangeEvent<HTMLInputElement>) {
+    const {checked} = e.target
+    setIsCompleted(checked);
+    console.log(item)
+    await updateTodo({...item, completed: checked});
   }
 
   return (

@@ -15,7 +15,7 @@ const MainPage = () => {
       <Typography fontWeight='bold' fontSize='2rem'>
         {t('Todo List')}
       </Typography>
-      <TodoList title='list'/>
+      <TodoList/>
     </Page>
   );
 };

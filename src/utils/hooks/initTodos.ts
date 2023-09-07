@@ -5,6 +5,7 @@ import {fetchAllTodos} from "@/utils/store/slices/todosSlices.ts";
 export const useInitTodos = () => {
   const dispatch = useAppDispatch();
   const {user} = useAppSelector(state => state.user)
+
   useEffect(() => {
     dispatch(fetchAllTodos(user?.id || ''));
   }, [dispatch]);

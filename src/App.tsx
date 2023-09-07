@@ -1,9 +1,15 @@
 import AuthPage from "@/pages/AuthPage";
-import {useAppSelector} from "@/utils/hooks/store.ts";
 import MainPage from "./pages/MainPage";
+import {useUser} from "@/utils/hooks/user.ts";
+import LoadingPage from "./pages/LoadingPage";
 
 function App() {
-  const user = useAppSelector(state => state.user.user);
+  const {user, loading} = useUser();
+
+  if (loading) {
+    return (<LoadingPage/>)
+  }
+
   return user ?
     <MainPage/> : <AuthPage/>
 }

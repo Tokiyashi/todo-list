@@ -1,7 +1,6 @@
-import {addDoc, collection, doc, getDocs, query, updateDoc, where} from "firebase/firestore";
-import {db} from "@/main.tsx";
+import {addDoc, collection, doc, getDoc, getDocs, query, updateDoc, where} from "firebase/firestore";
 import {Todo, TodoCreate} from "@/common/types/Todo.ts";
-import {nanoid} from "@reduxjs/toolkit";
+import {db} from "@/main.tsx";
 
 export const fetchTodos = async (userId: string): Promise<Todo[]> => {
   let result: Todo[] = [];
@@ -20,10 +19,11 @@ export const fetchTodos = async (userId: string): Promise<Todo[]> => {
 };
 
 export const addTodo = async (value: TodoCreate): Promise<Todo> => {
-  const newValue: Todo = {...value, id: nanoid(), completed: false}
-  await addDoc(collection(db, "todos"), newValue);
-
-  return newValue;
+  const newValue: Todo = {...value, completed: false}
+  const docRef = await addDoc(collection(db, "todos"), newValue);
+  const docSnapshot = await getDoc(docRef);
+  
+  return {id: docSnapshot.id, ...docSnapshot.data()} as Todo;
 }
 
 export const updateTodo = async (value: Todo): Promise<void> => {

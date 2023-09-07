@@ -12,6 +12,20 @@ const Form = () => {
   const {t} = useTranslation()
   const [errorMessage, setErrorMessage] = useState('')
 
+  async function handleLogin() {
+    const result = await fetchUser({name, password});
+    setName('');
+    setPassword('');
+
+    if (!result) {
+      setErrorMessage('Incorrect login or password')
+      return
+    }
+    localStorage.setItem('userId', result.id)
+    store.dispatch(setUser(result))
+
+  }
+
   async function handleSignIn() {
     if (!name || !password) {
       return
@@ -27,20 +41,9 @@ const Form = () => {
     }
 
     await addUser({name, password})
+    await handleLogin();
   }
 
-  async function HandleLogin() {
-    const result = await fetchUser({name, password});
-    setName('');
-    setPassword('');
-
-    if (!result) {
-      setErrorMessage('Incorrect login or password')
-      return
-    }
-    store.dispatch(setUser(result))
-
-  }
 
   function handleNameChange(e: ChangeEvent<HTMLInputElement>) {
     setName(e.target.value);
@@ -66,7 +69,7 @@ const Form = () => {
         value={password}
         label={t('Password')}
       />
-      <Button variant='contained' onClick={HandleLogin}>{t('Log in')}</Button>
+      <Button variant='contained' onClick={handleLogin}>{t('Log in')}</Button>
       <Button variant='outlined' onClick={handleSignIn}>{t('Sign in')}</Button>
       <Snackbar
         open={!!errorMessage}

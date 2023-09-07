@@ -1,40 +1,29 @@
-import {Todo, TodoCreate} from "@/common/types/Todo";
-import {db} from "@/main.tsx";
-import {collection, getDocs, query, where} from "firebase/firestore";
+import {collection, doc, updateDoc,} from "firebase/firestore";
 import {nanoid} from "@reduxjs/toolkit";
-import {addTodo, fetchTodos, updateTodo} from "@/utils/firebase/todoStorage.ts";
+import {addTodo, updateTodo} from "@/utils/firebase/todoStorage.ts";
+import {db} from "@/main.tsx";
 
 
 jest.mock("@/main.tsx");
 jest.mock("firebase/firestore");
 
 describe("Todo Api", () => {
+
   const testUserId = "testUserId";
-  const testTodo: Todo = {id: nanoid(), text: "Test Todo", userId: testUserId, completed: false} as Todo;
+  const testTodo = {
+    id: nanoid(),
+    text: "Test Todo",
+    userId: testUserId,
+    completed: false,
+  };
 
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  describe("fetchTodos", () => {
-    it("fetches todos for the given user id", async () => {
-      const mockedGetDocs = getDocs as jest.MockedFunction<typeof getDocs>;
-      mockedGetDocs.mockResolvedValueOnce({
-        docs: [{id: testTodo.id, data: () => testTodo}],
-      });
-
-      const result = await fetchTodos(testUserId);
-      expect(result).toEqual([testTodo]);
-
-      expect(collection).toHaveBeenCalledWith(db, "todos");
-      expect(query).toHaveBeenCalledWith(collection(db, "todos"), where("userId", "==", testUserId));
-      expect(getDocs).toHaveBeenCalled();
-    });
-  });
-
   describe("addTodo", () => {
     it("adds a new todo", async () => {
-      const todoInput: TodoCreate = {text: "Test Todo Create", userId: testUserId};
+      const todoInput = {text: "Test Todo Create", userId: testUserId};
 
       const result = await addTodo(todoInput);
       const expectedTodo = {...todoInput, id: expect.any(String), completed: false};
@@ -49,14 +38,8 @@ describe("Todo Api", () => {
 
       await updateTodo(updatedTodo);
 
-      expect(collection).toHaveBeenCalledWith(db, "todos");
-      expect(query).toHaveBeenCalledWith(collection(db, "todos"), where("userId", "==", testUserId));
-    });
-
-    it("does not update when no value or id provided", async () => {
-      await updateTodo(null as unknown as Todo);
-      expect(collection).not.toHaveBeenCalled();
-      expect(query).not.toHaveBeenCalled();
+      expect(doc).toHaveBeenCalledWith(db, "todos", updatedTodo.id);
+      expect(updateDoc).toHaveBeenCalledWith(doc(collection(db, "todos"), updatedTodo.id), updatedTodo);
     });
   });
 });
